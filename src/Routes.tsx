@@ -15,31 +15,13 @@ import { VideoScreen } from "@/screens/VideoScreen";
 import { SearchScreen } from "@/screens/Preload/SearchScreen";
 import { HomeScreen } from "@/screens/HomeScreen/HomeScreen";
 import { AccountScreen } from "@/screens/Account/AccountScreen";
-import { MessScreen } from "@/screens/MessScreens/MessageScreen";
-import { CommentScreen } from "@/screens/Comment/CommentScreen";
+
 import { WritePostScreen } from "@/screens/Write/WritePostScreen";
-import { NotifyScreen } from "@/screens/NotifyScreen/NotifyScreen";
-import { FriendlyRequestScreen } from "@/screens/NotifyScreen/FriendlyRequestScreen";
-import { ProfileScreen } from "@/screens/ProfileScreen/ProfileScreen";
+
 import { PostComponent } from "@/components/PostComponent";
-import { ChatScreen } from "@/screens/MessScreens/components/ChatScreen";
-import { FriendlySuggestScreen } from "@/screens/NotifyScreen/FriendlySuggestScreen";
-import { MarketScreen } from "@/screens/Market/MarketScreen";
-import {MarketDetailScreen} from "@/screens/Market/MarketDetailScreen";
-import { ListFriend } from "@/screens/ProfileScreen/components/ListFriend";
-import { Friendly } from "@/screens/ProfileScreen/components/Friendly";
-
-import { SearchFriends } from "@/screens/ProfileScreen/components/SearchFriends";
-
-import {SelectAlbumScreen} from '@/screens/SelectAlbum/SelectAlbumScreen';
-import {CreateAlbumScreen} from '@/screens/CreateAlbum/CreateAlbumScreen';
-
-import { ChangeProfile } from "@/screens/ChangeProfile/ChangeProfileScreen";
 
 
-import {PageScreen} from '@/screens/Page/PageScreen';
-import {GroupScreen} from '@/screens/Group/GroupScreen';
-import { SearchFullScreen } from "@/screens/SearchScreen/SearchFullScreen";
+
 
 
 
@@ -72,7 +54,7 @@ const TabBarStackComponent = memo(function TabBarStackComponent() {
             <TabBarIcon isFocused={focused} icon={IC_TAB_MARKET} />
           )
         }}
-        component={MarketScreen}
+        component={AccountScreen}
       />
       <TabBarStack.Screen
         name={"Messenger"}
@@ -82,7 +64,7 @@ const TabBarStackComponent = memo(function TabBarStackComponent() {
             <TabBarIcon isFocused={focused} icon={IC_TAB_MESSAGE} />
           )
         }}
-        component={MessScreen} />
+        component={AccountScreen} />
 
       <TabBarStack.Screen
         name={"Notify"}
@@ -92,7 +74,7 @@ const TabBarStackComponent = memo(function TabBarStackComponent() {
             <TabBarIcon isFocused={focused} icon={IC_TAB_NOTIFY} />
           )
         }}
-        component={NotifyScreen}
+        component={AccountScreen}
       />
 
       <TabBarStack.Screen
@@ -121,7 +103,6 @@ const MainStackComponent = memo(function MainStackComponent() {
       <MainStack.Screen name={"RegisterManualScreen"} component={RegisterManualScreen} />
       <MainStack.Screen name={"OTPScreen"} component={OTPScreen} />
       <MainStack.Screen name={"RegisterScreen"} component={RegisterScreen} />
-      <MainStack.Screen name={"MessScreen"} component={MessScreen} />
       <MainStack.Screen name={"PostComponent"} component={PostComponent} />
     </MainStack.Navigator>
   );
@@ -136,19 +117,7 @@ export const ModalStackComponent = memo(function ModalStackComponent() {
       <ModalStack.Screen name={"Routes"} component={MainStackComponent} />
       <ModalStack.Screen name={"Main"} component={TabBarStackComponent} />
       <ModalStack.Screen name={"SearchScreen"} component={SearchScreen} />
-      <ModalStack.Screen name={"CommentScreen"} component={CommentScreen} />
-      <ModalStack.Screen name={"FriendlyRequestScreen"} component={FriendlyRequestScreen} />
-      <ModalStack.Screen name={"MessengerScreen"} component={ChatScreen} />
-      <ModalStack.Screen name={"ProfileScreen"} component={ProfileScreen} />
-      <ModalStack.Screen name={"FriendlySuggestScreen"} component={FriendlySuggestScreen} />
-      <ModalStack.Screen name={"SearchFullScreen"} component={SearchFullScreen}/>
 
-      <ModalStack.Screen name={'ListFriend'} component={ListFriend}/>
-      <ModalStack.Screen name={'SearchFriends'} component={SearchFriends}/>
-      <ModalStack.Screen name={'ChangeProfile'} component={ChangeProfile}/>
-
-      <ModalStack.Screen name={"PageScreen"} component={PageScreen} />
-      <ModalStack.Screen name={"GroupScreen"} component={GroupScreen} />
     </ModalStack.Navigator>
   );
 });
@@ -172,8 +141,6 @@ export const Routes = memo(function Routes() {
                 <RootStack.Screen name={'Root'} component={ModalStackComponent}/>
                 <RootStack.Screen name={'VideoScreen'} component={VideoScreen}/>
                 <RootStack.Screen name={'WritePostScreen'} component={WritePostScreen} />
-                <RootStack.Screen name={'SelectAlbumScreen'} component={SelectAlbumScreen}/>
-                <RootStack.Screen name={'CreateAlbumScreen'} component={CreateAlbumScreen}/>
             </RootStack.Navigator>
         </NavigationContainer>
     );
